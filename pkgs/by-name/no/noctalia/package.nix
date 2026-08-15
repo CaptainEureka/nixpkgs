@@ -10,6 +10,7 @@
   pkg-config,
   wayland-scanner,
   makeBinaryWrapper,
+  autoAddDriverRunpath,
 
   # libraries
   cairo,
@@ -20,9 +21,12 @@
   harfbuzz,
   jemalloc,
   libGL,
+  libical,
+  libjxl,
   libqalculate,
   librsvg,
   libsecret,
+  libsndfile,
   libsodium,
   libwebp,
   libxkbcommon,
@@ -61,13 +65,13 @@ stdenv.mkDerivation (finalAttrs: {
   __structuredAttrs = true;
 
   pname = "noctalia";
-  version = "5.0.0-beta.4";
+  version = "5.0.0-beta.8";
 
   src = fetchFromGitHub {
     owner = "noctalia-dev";
     repo = "noctalia";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-jXz2vFHgidbyU46ScROLSuBIhsqqtyqNu2M0tmGX/FA=";
+    hash = "sha256-qy3Cheg/FQ9ZaBPTIgdq4IkmkNtC6XBpmtC8nT+wU/Y=";
   };
 
   strictDeps = true;
@@ -78,6 +82,7 @@ stdenv.mkDerivation (finalAttrs: {
     pkg-config
     wayland-scanner
     makeBinaryWrapper
+    autoAddDriverRunpath
   ];
 
   buildInputs = [
@@ -89,9 +94,12 @@ stdenv.mkDerivation (finalAttrs: {
     harfbuzz
     jemalloc
     libGL
+    libical
+    libjxl
     libqalculate
     librsvg
     libsecret
+    libsndfile
     libsodium
     libwebp
     libxkbcommon
@@ -109,6 +117,10 @@ stdenv.mkDerivation (finalAttrs: {
     wayland
     wayland-protocols
     wireplumber
+  ];
+
+  mesonFlags = [
+    (lib.mesonEnable "tests" false)
   ];
 
   mesonBuildType = "release";
@@ -129,9 +141,9 @@ stdenv.mkDerivation (finalAttrs: {
   };
 
   meta = {
-    description = "A sleek, customizable desktop shell crafted for Wayland.";
-    homepage = "https://github.com/noctalia-dev/noctalia";
-    changelog = "https://github.com/noctalia-dev/noctalia/releases/tag/v${finalAttrs.version}";
+    description = "Sleek, customizable desktop shell crafted for Wayland";
+    homepage = "https://noctalia.dev";
+    changelog = "https://noctalia.dev/changelogs#v${finalAttrs.version}";
     license = with lib.licenses; [
       mit
       asl20 # material_color_utilities is Apache 2.0

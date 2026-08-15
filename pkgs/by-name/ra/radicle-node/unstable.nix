@@ -1,8 +1,8 @@
 { radicle-node }:
 
 radicle-node.override {
-  version = "1.10.0-rc.2";
-  srcHash = "sha256-8cFYsR5fGiChBduBmNcYp0MLVqlY2KnfieFa+yzbL7E=";
-  cargoHash = "sha256-E5CDlHcdFFwRw3S+wLcRLpLzrGVn43z4FznJrYemYP4=";
+  version = "1.10.1";
+  srcHash = "sha256-F+64o9z/al0iaLFyQHAYk/3jjf5T0FdgqaU3nEWIheg=";
+  cargoHash = "sha256-TLffetbkVwIbUDoI+96T99+lfYu2SIpGtwC0DbuJXnU=";
   updateScript = ./update-unstable.sh;
 }

@@ -9,13 +9,14 @@
   rustPlatform,
   protobuf,
   cacert,
+  tzdata,
   nixosTests,
 }:
 
 let
   console = stdenv.mkDerivation (finalAttrs: {
     pname = "rustfs-console";
-    version = "0.1.16";
+    version = "0.1.20";
     __structuredAttrs = true;
     __darwinAllowLocalNetworking = true;
 
@@ -23,13 +24,13 @@ let
       owner = "rustfs";
       repo = "console";
       tag = "v${finalAttrs.version}";
-      hash = "sha256-WZ1vROBZJltcaXdwIuTsRmOY2iZxIoi7yW8lapZcaHo=";
+      hash = "sha256-EUyjYPDkHmD8RRmusFnWsWiKbRRSzZ0c4pbMr+2PJdE=";
     };
 
     pnpmDeps = fetchPnpmDeps {
       inherit (finalAttrs) pname version src;
       fetcherVersion = 4;
-      hash = "sha256-+U4HRaThEeC6jA6dA4UmhJLvANq0IMySOW5ua9m5Q6A=";
+      hash = "sha256-ox4hKm3f4QVpxfx4g0uNDRY7w6O3L3AVz2nmHhs8UHM=";
     };
 
     nativeBuildInputs = [
@@ -51,14 +52,14 @@ let
 in
 rustPlatform.buildRustPackage rec {
   pname = "rustfs";
-  version = "1.0.0-beta.10";
+  version = "1.0.0-rc.1";
   __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "rustfs";
     repo = "rustfs";
     tag = version;
-    hash = "sha256-lBkfaTH36MhWHk39Ie2uQqcU+yf76uImPdV91C8kWV8=";
+    hash = "sha256-iVAIsq/SAabdBjnNYLF7oQRagUILRN5HEUumnVqp1CM=";
   };
 
   postPatch = ''
@@ -66,7 +67,7 @@ rustPlatform.buildRustPackage rec {
     cp -rL ${console} ./rustfs/static
   '';
 
-  cargoHash = "sha256-PMgC4+/n/UOpBa5oiZ1F17oht5YmN1RzoFIA0qE+h6M=";
+  cargoHash = "sha256-W6+6Ypw9WTbprQbDVbhdvB+hEW71oPOHYQV5bZKtJhc=";
 
   nativeBuildInputs = [
     protobuf
@@ -77,20 +78,17 @@ rustPlatform.buildRustPackage rec {
     RUSTFLAGS = "--cfg tokio_unstable";
     # reqwest loads CA certs even if not used during tests
     SSL_CERT_FILE = "${cacert}/etc/ssl/certs/ca-bundle.crt";
+    # jiff needs a time zone database to resolve zones like UTC during tests
+    TZDIR = "${tzdata}/share/zoneinfo";
   };
 
   # Only build the main rustfs binary
   cargoBuildFlags = "-p rustfs";
   cargoTestFlags = "-p rustfs";
 
-  checkFlags = [
-    # require real disks
-    "--skip=app::capacity_dirty_scope_test"
-    "--skip=app::delete_objects_stat_gating_test"
-    "--skip=app::put_prelookup_gating_test"
-    # non-deterministically panics
-    "--skip=two_embedded_servers_isolate_auth_and_data_planes"
-  ];
+  # tests share global state and fail depending on execution order,
+  # upstream uses nexttest to run tests in separate processes
+  useNextest = true;
 
   passthru.tests = {
     inherit (nixosTests) rustfs;
