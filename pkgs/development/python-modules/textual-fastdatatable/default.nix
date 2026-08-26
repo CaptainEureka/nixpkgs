@@ -22,7 +22,7 @@
 
 buildPythonPackage (finalAttrs: {
   pname = "textual-fastdatatable";
-  version = "0.17.0";
+  version = "0.19.0";
   pyproject = true;
   __structuredAttrs = true;
 
@@ -30,7 +30,7 @@ buildPythonPackage (finalAttrs: {
     owner = "tconbeer";
     repo = "textual-fastdatatable";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-aDbYwPISsmk9af3yQWh4ClHj3SRljzBMVxvYgWk61rM=";
+    hash = "sha256-o+lM682bLwhirNMOJ4AXzdgaA1ggysBkWFnDqTOj1s0=";
   };
 
   build-system = [ hatchling ];
