@@ -89,8 +89,8 @@ let
         mktplcRef = {
           publisher = "42Crunch";
           name = "vscode-openapi";
-          version = "5.6.0";
-          hash = "sha256-ISrCEZukzXsQFCn0fAvG9Fuf8ReO/gkn3FX5/G6DRak=";
+          version = "5.9.0";
+          hash = "sha256-sUfug0F0OaoMmKEmcHyXQIXcun35MAFVSGAHbx7xK/8=";
         };
         meta = {
           changelog = "https://github.com/42Crunch/vscode-openapi/blob/v${mktplcRef.version}/CHANGELOG.md";
@@ -262,8 +262,8 @@ let
         mktplcRef = {
           name = "ng-template";
           publisher = "Angular";
-          version = "22.0.1";
-          hash = "sha256-IaaqFb0YLJcVqoV5QT9fZmYd5GbfQCUlK68SF76Y/dY=";
+          version = "22.1.0";
+          hash = "sha256-/PftUvaE9EjsKRc0TnF0lftOgp5fzKmR+KGhocXEMrk=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/Angular.ng-template/changelog";
@@ -513,8 +513,8 @@ let
         mktplcRef = {
           publisher = "banacorn";
           name = "agda-mode";
-          version = "0.10.1";
-          hash = "sha256-jQn7DJ3LKnuWDtoTu0FhDXMZSUwasz8lwJ6O9K06B3M=";
+          version = "0.10.2";
+          hash = "sha256-XpVhFFxmvoIHh64abRVQ+hrdauJBwg+doJGNoweH2hU=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/banacorn.agda-mode/changelog";
@@ -1190,8 +1190,8 @@ let
         mktplcRef = {
           publisher = "DanielSanMedium";
           name = "dscodegpt";
-          version = "3.24.57";
-          hash = "sha256-iZZlZqghFRBtAOGZz1DV5bW0n41DpJKB865plQ5rXoY=";
+          version = "3.24.67";
+          hash = "sha256-ynB3xPun4swOhvVLmNpIAue7VmfabKUzR0RCqOgpyYY=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/DanielSanMedium.dscodegpt/changelog";
@@ -1242,8 +1242,8 @@ let
         mktplcRef = {
           name = "databricks";
           publisher = "databricks";
-          version = "2.15.0";
-          hash = "sha256-IkzkKEmcbRI0RD72NFgE38oDKxrFe+rYozkUmOc3SBM=";
+          version = "2.17.1";
+          hash = "sha256-UWvn9Gy31/9HSKD+OCfpoE4BSGyReC4pv+4sH7higTU=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/databricks.databricks/changelog";
@@ -1792,8 +1792,8 @@ let
         mktplcRef = {
           name = "foam-vscode";
           publisher = "foam";
-          version = "0.44.5";
-          hash = "sha256-MiQ1Ze0vW0JCfmKVFe6eAWBbHhZqDKtRhhiQMkBgRe4=";
+          version = "0.44.6";
+          hash = "sha256-9OAQIXdFqV3pLFmixB2ES8Ti/qK3uPk6yMRs9Y+w4aI=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/foam.foam-vscode/changelog";
@@ -1982,8 +1982,8 @@ let
         mktplcRef = {
           publisher = "github";
           name = "codespaces";
-          version = "1.18.15";
-          hash = "sha256-NcW2XVQ6F7s6k4mIesEXhCkVVRfudwFr3glqB+TjrqM=";
+          version = "1.18.16";
+          hash = "sha256-5TEMMAy9t54WSnfWWHMNHTYbwGieMIG6fCETm3YASHs=";
         };
 
         meta = {
@@ -3877,8 +3877,8 @@ let
         mktplcRef = {
           name = "prisma";
           publisher = "Prisma";
-          version = "31.11.0";
-          hash = "sha256-vvHr5jZ2lccO93O82OKnRF4wyVv3n/H3nKJIqZdIjlY=";
+          version = "31.12.8";
+          hash = "sha256-3XJu7g8NnevBZiJ90iogqR2QMIgnCQ/HFII98RG8arI=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/Prisma.prisma/changelog";
@@ -3908,6 +3908,8 @@ let
           maintainers = [ ];
         };
       };
+
+      quarto.quarto = callPackage ./quarto.quarto { };
 
       quicktype.quicktype = buildVscodeMarketplaceExtension {
         mktplcRef = {
@@ -3957,8 +3959,8 @@ let
         mktplcRef = {
           publisher = "redhat";
           name = "java";
-          version = "1.55.0";
-          hash = "sha256-ARY5w+40e5WRiVv8d9jPKPg2wFPQpJrkqD7+ncRzpgM=";
+          version = "1.56.0";
+          hash = "sha256-PGqCHXYS64efpAKAtsWFNC7sgtaxs+jc/k0DleBiQ0M=";
         };
         buildInputs = [ jdk ];
         meta = {
@@ -4043,8 +4045,8 @@ let
           publisher = "rocq-prover";
           name = "vsrocq";
           # When updating the version here, also update the language server vsrocq-language-server
-          version = "2.4.3";
-          hash = "sha256-o9rsSDCDYRWZQBMDA7DtWay50tBI76kw7H7CivrZpKo=";
+          version = "2.5.0";
+          hash = "sha256-05YrIKtZRmEjs+QSzsCyIxajRmSLgoCkNUDti+w97Fw=";
         };
         meta = {
           description = "VsRocq is an extension for Visual Studio Code with support for the Rocq Prover";
@@ -4073,8 +4075,8 @@ let
         mktplcRef = {
           name = "wikitext";
           publisher = "RoweWilsonFrederiskHolme";
-          version = "4.0.5";
-          hash = "sha256-VyrcgS93B5Xd4s101lnTw9o27ffcvmxkShCKJ+6H+2w=";
+          version = "4.0.6";
+          hash = "sha256-qclCSVLvdU6TYQxKxdrHWZRfBSjzEblA4zgDqxEuFXo=";
         };
         meta = {
           description = "Extension that helps users view and write MediaWiki's Wikitext files";
@@ -4442,8 +4444,6 @@ let
         };
         meta.license = lib.licenses.lgpl3Only;
       };
-
-      sourcegraph.amp = callPackage ./sourcegraph.amp { };
 
       sourcery.sourcery = callPackage ./sourcery.sourcery { };
 
@@ -5336,8 +5336,8 @@ let
         mktplcRef = {
           name = "csharp-ls";
           publisher = "vytautassurvila";
-          version = "0.0.34";
-          hash = "sha256-wlBa9Fv1sIu4On2za+gzzS9vULDaAVidRKZ1UbyaJTA=";
+          version = "0.0.35";
+          hash = "sha256-3EgC90XebG+YLWZTIJ3+5xDmGlU2Tr4bWwXL+jrt9XA=";
         };
         meta = {
           changelog = "https://github.com/vytautassurvila/vscode-csharp-ls/blob/master/CHANGELOG.md";
