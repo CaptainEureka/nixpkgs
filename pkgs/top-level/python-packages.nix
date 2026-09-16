@@ -3723,6 +3723,8 @@ self: super: with self; {
 
   coveralls = callPackage ../development/python-modules/coveralls { };
 
+  cpace = callPackage ../development/python-modules/cpace { };
+
   cpe = callPackage ../development/python-modules/cpe { };
 
   cpe-search = callPackage ../development/python-modules/cpe-search { };
@@ -4259,8 +4261,6 @@ self: super: with self; {
   deezer-py = callPackage ../development/python-modules/deezer-py { };
 
   deezer-python = callPackage ../development/python-modules/deezer-python { };
-
-  deezer-python-async = callPackage ../development/python-modules/deezer-python-async { };
 
   defang = callPackage ../development/python-modules/defang { };
 
@@ -5257,6 +5257,8 @@ self: super: with self; {
   dsmr-parser = callPackage ../development/python-modules/dsmr-parser { };
 
   dsnap = callPackage ../development/python-modules/dsnap { };
+
+  dspy = callPackage ../development/python-modules/dspy { };
 
   dt8852 = callPackage ../development/python-modules/dt8852 { };
 
@@ -10264,6 +10266,8 @@ self: super: with self; {
 
   lojack-api = callPackage ../development/python-modules/lojack-api { };
 
+  loky = callPackage ../development/python-modules/loky { };
+
   lomond = callPackage ../development/python-modules/lomond { };
 
   london-tube-status = callPackage ../development/python-modules/london-tube-status { };
@@ -10922,6 +10926,8 @@ self: super: with self; {
 
   mizani = callPackage ../development/python-modules/mizani { };
 
+  mjviser = callPackage ../development/python-modules/mjviser { };
+
   mkdocs = callPackage ../development/python-modules/mkdocs { };
 
   mkdocs-autolinks-plugin = callPackage ../development/python-modules/mkdocs-autolinks-plugin { };
@@ -11320,6 +11326,8 @@ self: super: with self; {
   mujoco = callPackage ../development/python-modules/mujoco { inherit (pkgs) mujoco; };
 
   mujoco-mjx = callPackage ../development/python-modules/mujoco-mjx { mujoco-main = pkgs.mujoco; };
+
+  mujoco-warp = callPackage ../development/python-modules/mujoco-warp { };
 
   mujson = callPackage ../development/python-modules/mujson { };
 
@@ -11844,6 +11852,10 @@ self: super: with self; {
   nasdaq-data-link = callPackage ../development/python-modules/nasdaq-data-link { };
 
   natasha = callPackage ../development/python-modules/natasha { };
+
+  native-sparse-attention-pytorch =
+    callPackage ../development/python-modules/native-sparse-attention-pytorch
+      { };
 
   nats-py = callPackage ../development/python-modules/nats-py { };
 
@@ -12384,8 +12396,6 @@ self: super: with self; {
   oemthermostat = callPackage ../development/python-modules/oemthermostat { };
 
   offtrac = callPackage ../development/python-modules/offtrac { };
-
-  ofxclient = callPackage ../development/python-modules/ofxclient { };
 
   ofxhome = callPackage ../development/python-modules/ofxhome { };
 
@@ -17732,8 +17742,6 @@ self: super: with self; {
 
   railroad-diagrams = callPackage ../development/python-modules/railroad-diagrams { };
 
-  rainbowstream = callPackage ../development/python-modules/rainbowstream { };
-
   raincloudy = callPackage ../development/python-modules/raincloudy { };
 
   ramlfications = callPackage ../development/python-modules/ramlfications { };
@@ -18339,6 +18347,8 @@ self: super: with self; {
   rrdtool = callPackage ../development/python-modules/rrdtool { };
 
   rsa = callPackage ../development/python-modules/rsa { };
+
+  rsl-rl-lib = callPackage ../development/python-modules/rsl-rl-lib { };
 
   rsskey = callPackage ../development/python-modules/rsskey { };
 
@@ -19075,6 +19085,8 @@ self: super: with self; {
   sjcl = callPackage ../development/python-modules/sjcl { };
 
   skein = callPackage ../development/python-modules/skein { };
+
+  skggm = callPackage ../development/python-modules/skggm { };
 
   skia-pathops = callPackage ../development/python-modules/skia-pathops { };
 
@@ -20956,6 +20968,8 @@ self: super: with self; {
 
   torchrl = callPackage ../development/python-modules/torchrl { };
 
+  torchrunx = callPackage ../development/python-modules/torchrunx { };
+
   torchsde = callPackage ../development/python-modules/torchsde { };
 
   torchsnapshot = callPackage ../development/python-modules/torchsnapshot { };
@@ -21277,8 +21291,6 @@ self: super: with self; {
   twitch-python = callPackage ../development/python-modules/twitch-python { };
 
   twitchapi = callPackage ../development/python-modules/twitchapi { };
-
-  twitter = callPackage ../development/python-modules/twitter { };
 
   twitterapi = callPackage ../development/python-modules/twitterapi { };
 
@@ -21933,6 +21945,8 @@ self: super: with self; {
 
   unearth = callPackage ../development/python-modules/unearth { };
 
+  uni-curses = callPackage ../development/python-modules/uni-curses { };
+
   unicode-rbnf = callPackage ../development/python-modules/unicode-rbnf { };
 
   unicode-segmentation-rs = callPackage ../development/python-modules/unicode-segmentation-rs { };
@@ -21950,8 +21964,6 @@ self: super: with self; {
   };
 
   unicrypto = callPackage ../development/python-modules/unicrypto { };
-
-  unicurses = callPackage ../development/python-modules/unicurses { };
 
   unidata-blocks = callPackage ../development/python-modules/unidata-blocks { };
 

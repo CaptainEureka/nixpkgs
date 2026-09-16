@@ -585,6 +585,7 @@ in
   druid = handleTestOn [ "x86_64-linux" ] ./druid { };
   drupal = runTest ./drupal.nix;
   dublin-traceroute = runTest ./dublin-traceroute.nix;
+  duplicity = runTest ./duplicity.nix;
   dwl = runTestOn [ "x86_64-linux" "aarch64-linux" ] ./dwl.nix;
   e57inspector = import ./e57inspector.nix { inherit pkgs runTest; };
   early-mount-options = runTest ./early-mount-options.nix;
@@ -974,7 +975,9 @@ in
   keepalived = discoverTests (import ./keepalived.nix);
   keepassxc = runTest ./keepassxc.nix;
   kener = runTest ./kener.nix;
-  kerberos = handleTest ./kerberos/default.nix { };
+  kerberos = import ./kerberos/default.nix {
+    inherit pkgs runTest;
+  };
   kernel-generic = handleTest ./kernel-generic { };
   kernel-latest-ath-user-regd = runTest ./kernel-latest-ath-user-regd.nix;
   kernel-rust = handleTest ./kernel-rust.nix { };
@@ -1113,7 +1116,7 @@ in
   matrix-tuwunel = runTest ./matrix/tuwunel.nix;
   matter-server = runTest ./matter-server.nix;
   matterjs-server = runTest ./matterjs-server.nix;
-  mattermost = handleTest ./mattermost { };
+  mattermost = runTest ./mattermost;
   mautrix-discord = runTest ./matrix/mautrix-discord.nix;
   mautrix-meta-postgres = runTest ./matrix/mautrix-meta-postgres.nix;
   mautrix-meta-sqlite = runTest ./matrix/mautrix-meta-sqlite.nix;
@@ -1237,6 +1240,7 @@ in
   nebula.reload = runTest ./nebula/reload.nix;
   neo4j = runTest ./neo4j.nix;
   netbird = runTest ./netbird.nix;
+  netbird-relay = runTest ./netbird-relay.nix;
   netbox = runTest ./web-apps/netbox/default.nix;
   netdata = runTest ./netdata.nix;
   netfoil = runTest ./netfoil.nix;
@@ -1602,7 +1606,10 @@ in
   readeck = runTest ./readeck.nix;
   realm = runTest ./realm.nix;
   rebuilderd = runTest ./rebuilderd.nix;
-  redis = handleTest ./redis.nix { };
+  redis = runTest {
+    imports = [ ./redis.nix ];
+    _module.args.package = pkgs.redis;
+  };
   redlib = runTest ./redlib.nix;
   redmine = handleTestOn [ "x86_64-linux" "aarch64-linux" ] ./redmine.nix { };
   refind = runTest ./refind.nix;
@@ -1981,6 +1988,10 @@ in
   utmp = runTest ./utmp.nix;
   uwsgi = runTest ./uwsgi.nix;
   v2ray = runTest ./v2ray.nix;
+  valkey = runTest {
+    imports = [ ./redis.nix ];
+    _module.args.package = pkgs.valkey;
+  };
   varnish80 = runTest {
     imports = [ ./varnish.nix ];
     _module.args.package = pkgsLinux.varnish80;
