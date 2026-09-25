@@ -177,6 +177,7 @@ mapAliases {
   cx_oracle = throw "'cx_oracle' has been renamed to/replaced by 'cx-oracle'"; # Converted to throw 2025-10-29
   dalle-mini = throw "'dalle-mini' has been removed due to lack of upstream maintenance"; # added 2026-02-26
   dask-yarn = throw "'dask-yarn' has been removed due to lack of upstream maintenance"; # added 2026-07-06
+  databricks-cli = throw "'databricks-cli' has been removed from the Python package set. Use 'pkgs.databricks-cli' instead."; # Added 2026-09-04
   dataclasses-serialization = throw "'dataclasses-serialization' has been removed due to lack of upstream maintenance."; # added 2026-07-14
   datashape = throw "'datashape' has been removed as it was unmaintained upstream"; # Added 2026-03-22
   datatable = throw "'datatable' has been removed due to lack of upstream maintenance"; # added 2026-02-02
@@ -476,12 +477,14 @@ mapAliases {
   pam = throw "'pam' has been renamed to/replaced by 'python-pam'"; # Converted to throw 2025-10-29
   pandas-ta = throw "pandas-ta has been removed: abandoned upstream"; # added 2026-07-20
   paramz = throw "'paramz' has been removed as it is incompatible with Numpy 2"; # added 2025-11-10
+  paranoid-crypto = throw "'paranoid-crypto' has been removed because Google archived the unmaintained project."; # Added 2026-09-02
   parselmouth = praat-parselmouth; # added 2026-07-26
   password-entropy = warnAlias "'password-entropy' has been renamed to 'data-password-entropy'" data-password-entropy; # Added 2026-07-26
   PasteDeploy = throw "'PasteDeploy' has been renamed to/replaced by 'pastedeploy'"; # Converted to throw 2025-10-29
   patator = throw "'patator' has been removed as it was dependant on removed packages and broken"; # Added 2025-12-30
   pathpy = throw "'pathpy' has been renamed to/replaced by 'path'"; # Converted to throw 2025-10-29
   pcbnew-transition = throw "'pcbnew-transition' has been renamed to/replaced by 'pcbnewtransition'"; # Converted to throw 2025-10-29
+  pcbnewtransition = throw "'pcbnewtransition' has been removed as it is unmaintained and incompatible with KiCad 10+"; # Added 2026-08-30
   pdfminer = throw "'pdfminer' has been renamed to/replaced by 'pdfminer-six'"; # Converted to throw 2025-10-29
   peakrdl = throw "'peakrdl' has been renamed to/replaced by 'peakrdl-cli'"; # added 2026-07-14
   pep257 = throw "'pep257' has been renamed to/replaced by 'pydocstyle'"; # Converted to throw 2025-10-29
@@ -700,6 +703,7 @@ mapAliases {
   slackclient = throw "'slackclient' has been renamed to/replaced by 'slack-sdk'"; # Converted to throw 2025-10-29
   sleekxmpp = throw "'sleekxmpp' has been removed because it was deprecated in favor of 'slixmpp'"; # added 2026-01-19
   slicedimage = throw "'slicedimage' has been removed because it was unused"; # Added 2026-08-14
+  slugid = throw "'slugid' has been removed as it was deprecated upstream."; # Added 2026-09-04
   smart_open = throw "'smart_open' has been renamed to/replaced by 'smart-open'"; # Converted to throw 2025-10-29
   smpp_pdu = throw "'smpp_pdu' has been renamed to/replaced by 'smpp-pdu'"; # Converted to throw 2025-10-29
   sorl_thumbnail = throw "'sorl_thumbnail' has been renamed to/replaced by 'sorl-thumbnail'"; # Converted to throw 2025-10-29
